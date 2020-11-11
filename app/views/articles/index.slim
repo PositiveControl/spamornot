@@ -1,0 +1,8 @@
+doctype html
+html
+  body
+    - for article in @articles
+      table#articles
+        tr
+          td.title = article.title
+          td.category = article.category
