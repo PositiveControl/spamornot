@@ -1,8 +1,11 @@
 doctype html
 html
   body
-    - for article in @articles
-      table#articles
-        tr
-          td.title: a href=article_path(article) = article.title
-          td.category = article.category
+    table#articles.table
+      thead.thead-dark
+        th Category
+        th Title
+        - for article in @articles
+          tr
+            td.category = article.category
+            td.title: a href=article_path(article) = article.title

@@ -1,10 +1,13 @@
 doctype html
 html
   body
-    br
-    h1.title = @article.title
-    p.content = @article.content
+    p = @article.category
+    div.jumbotron.jumbotron-fluid
+      h1.display-4.center = @article.title
+    div
+    p.lead = @article.content
 
     - if logged_in?(:editor) && @article.user_id == current_user.id
-      = button_to "Edit", { action: "edit", id: @article.id }, method: :get
-      = button_to "Delete", { action: "destroy", id: @article.id }, method: :delete, data: { confirm: "Are you sure?" }
+      = button_to "Edit", { action: "edit", id: @article.id }, method: :get, class: "btn btn-secondary"
+      br
+      = button_to "Delete", { action: "destroy", id: @article.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

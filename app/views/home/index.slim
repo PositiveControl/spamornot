@@ -2,13 +2,14 @@ doctype html
 html
   body
     h1 Welcome to Nikola News
-    table#articles
-      th Market
-      - for article in @market_articles
-        tr
-          td.title: a href=article_path(article) = article.title
-      th Products
-      - for article in @product_articles
-        tr
-          td.title: a href=article_path(article) = article.title
+    table#articles.table
+      thead.thead-dark
+        th Market
+        - for article in @market_articles
+          tr
+            td.title: a href=article_path(article) = article.title
+        th Products
+        - for article in @product_articles
+          tr
+            td.title: a href=article_path(article) = article.title
 

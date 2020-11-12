@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  access all: [:index], [:user, :admin] => {except: [:new, :create, :edit, :show, :destroy]}, editor: :all
+  access all: [:index], [:user, :admin] => {except: [:new, :create, :edit, :destroy]}, editor: :all
 
   def index
     @articles = Article.all
