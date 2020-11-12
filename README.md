@@ -1,24 +1,15 @@
-# README
+# Nikola News
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Configuration: `bundle install`
 
-Things you may want to cover:
+* Database creation: `rails db:create`, `rails db:migrate`
 
-* Ruby version
+* Database initialization: `rails db:seed` 
 
-* System dependencies
+* Run the app locally: `rails server`
 
-* Configuration
+Accounts available after seeding DB (all passwords `123456`):
+* user@example.com
+* editor@example.com
+* admin@example.com
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
