@@ -4,3 +4,7 @@ html
     br
     h1.title = @article.title
     p.content = @article.content
+
+    - if logged_in?(:editor) && @article.user_id == current_user.id
+      = button_to "Edit", { action: "edit", id: @article.id }, method: :get
+      = button_to "Delete", { action: "destroy", id: @article.id }, method: :delete, data: { confirm: "Are you sure?" }

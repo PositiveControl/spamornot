@@ -4,5 +4,5 @@ html
     - for article in @articles
       table#articles
         tr
-          td.title = article.title
+          td.title: a href=article_path(article) = article.title
           td.category = article.category
