@@ -12,4 +12,8 @@ html
         - for article in @product_articles
           tr
             td.title: a href=article_path(article) = article.title
+        th Other
+        - for article in @other_articles
+          tr
+            td.title: a href=article_path(article) = article.title
 
