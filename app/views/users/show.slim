@@ -2,13 +2,14 @@ doctype html
 html
   body
     br
-    table
-      th Email
+    table.table
+      thead.thead-dark
+        th Email
+        th Role
       tr
-        td.email = @user.email
-      th Role
-      tr
-        td.role = @user.role
+        td = @user.email
+        td= @user.role
     br
-    = button_to "Edit", { action: "edit", id: @user.id }, method: :get
-    = button_to "Delete", { action: "destroy", id: @user.id }, method: :delete, data: { confirm: "Are you sure?" }
+    = button_to "Edit", { action: "edit", id: @user.id }, method: :get, class: "btn btn-secondary"
+    br
+    = button_to "Delete", { action: "destroy", id: @user.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

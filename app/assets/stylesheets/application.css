@@ -19,3 +19,5 @@ footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 body { margin: 0; }
+h1 { margin-left: 20px; }
+p { margin-left: 20px; }

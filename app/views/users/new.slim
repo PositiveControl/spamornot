@@ -3,9 +3,11 @@ html
   body
     = form_with(model: @user, url: users_path, class: "nifty_form") do |f|
       = f.label(:email, "Email: ")
-      = f.text_field(:email)
+      = f.text_field(:email, class: "form-control")
       = f.label(:password, "Password: ")
-      = f.text_field(:password)
+      = f.text_field(:password, class: "form-control")
+      br
       = f.label(:role, "Role: ")
       = f.select(:role, options_for_select([["User", :user], ["Editor", :editor], ["Admin", :admin]]))
-      = f.submit("Create")
+      br
+      = f.submit("Create", class: "btn btn-primary")

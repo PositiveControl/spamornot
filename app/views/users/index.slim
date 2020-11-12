@@ -1,8 +1,11 @@
 doctype html
 html
   body
-    - for user in @users
-      table#users
-        tr
-          td.email: a href=user_path(user) = user.email
-          td.role = user.role
+    table#users.table
+      thead.thead-dark
+        th Email
+        th Role
+        - for user in @users
+          tr
+            td: a href=user_path(user) = user.email
+            td = user.role
