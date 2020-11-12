@@ -1,0 +1,11 @@
+doctype html
+html
+  body
+    = form_with(model: @user, url: user_path, class: "nifty_form") do |f|
+      = f.label(:email, "Email: ")
+      = f.text_field(:email)
+      = f.label(:password, "Password: ")
+      = f.text_field(:password)
+      = f.label(:role, "Role: ")
+      = f.select(:role, options_for_select([["User", :user], ["Editor", :editor], ["Admin", :admin]]))
+      = f.submit("Update")
