@@ -1,0 +1,8 @@
+doctype html
+html
+  body
+    - for user in @users
+      table#users
+        tr
+          td.email: a href=user_path(user) = user.email
+          td.role = user.role

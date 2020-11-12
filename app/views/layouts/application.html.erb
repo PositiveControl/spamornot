@@ -25,9 +25,17 @@
           <li class="nav-item active">
             <a class="nav-link" href="/articles">Articles</a>
           </li>
-          <% if logged_in?(:editor, :admin) %>
+          <% if logged_in?(:editor) %>
             <li class="nav-item active">
               <a class="nav-link" href="/articles/new">New Article</a>
+            </li>
+          <% end %>
+          <% if logged_in?(:admin) %>
+            <li class="nav-item active">
+              <a class="nav-link" href="/users">Users</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/users/new">New User</a>
             </li>
           <% end %>
         </ul>

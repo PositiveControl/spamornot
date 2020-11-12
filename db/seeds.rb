@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(email: "admin@example.com", password: "123456", role: :admin)
 User.create(email: "user@example.com", password: "123456", role: :user)
-editor_user = User.create(email: "editor@example.com", password: "123456", role: :editor)
-User.create(email: "editor2@example.com", password: "123456", role: :editor)
+User.create(email: "editor@example.com", password: "123456", role: :editor)
+editor_user = User.create(email: "editor2@example.com", password: "123456", role: :editor)
 Article.create(title: "Shares on the rise!", content: "In the past two trading days, Nikola has seen a 22% rise in share price.", category: "Market", user: editor_user)
 Article.create(title: "Shares tumble", content: "In the past two trading days, Nikola has seen a 6% fall in share price.", category: "Market", user: editor_user)
 Article.create(title: "Shares steady on news", content: "In the past two trading days, Nikola has seen a 0.1% rise in share price.", category: "Market", user: editor_user)
