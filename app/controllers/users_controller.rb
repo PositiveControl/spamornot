@@ -27,8 +27,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    params[:user].delete(:password) if params[:user][:password].blank?
-
     user = User.find(params[:id])
     user.update(user_params)
 
@@ -44,6 +42,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+
     params.require(:user).permit(:email, :password, :role)
   end
 end
