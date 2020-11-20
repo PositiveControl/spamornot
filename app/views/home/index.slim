@@ -1,18 +1,20 @@
 doctype html
 html
   body
-    h1 Welcome to Nikola News
-    table#articles.table
-      thead.thead-dark
-        th Market
-        - for article in @market_articles
-          tr
-            td.title: a href=article_path(article) = article.title
-        th Products
-        - for article in @product_articles
-          tr
-            td.title: a href=article_path(article) = article.title
-        th Other
-        - for article in @other_articles
-          tr
-            td.title: a href=article_path(article) = article.title
+    div.container.main-content
+      div.row.justify-content-center
+        = image_tag(@email.screenshot)
+      div.row.justify-content-around.btn-container
+        div.btn-group
+          - if @email.spam
+            div.col-4
+              = button_to("Spam", root_path, method: "get",  class: "btn btn-danger", params: {answer: :correct})
+            div.col-4
+            div.col-4
+              = button_to("Not", root_path, method: "get",  class: "btn btn-success", params: {answer: :incorrect})
+          - else
+            div.col-4
+              = button_to("Spam", root_path, method: "get",  class: "btn btn-danger", params: {answer: :incorrect})
+            div.col-4
+            div.col-4
+              = button_to("Not", root_path, method: "get",  class: "btn btn-success", params: {answer: :correct})

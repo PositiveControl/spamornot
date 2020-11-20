@@ -4,11 +4,13 @@ html
     = form_with(model: @article, url: article_path, class: "nifty_form") do |f|
       = f.label(:title, "Title: ")
       = f.text_field(:title, class: "form-control")
-      = f.label(:content, "Content: ")
+      = f.label(:content, "About this screenshot: ")
       = f.text_area(:content, class: "form-control")
       br
-      = f.label(:category, "Article category: ")
-      = f.select(:category, options_for_select([["Market", "Market"], ["Products", "Products"], ["Other", "Other"]]))
+      = f.label(:category, "Email category: ")
+      = f.select(:category, options_for_select([["Spam", "Spam"], ["Not Spam", "Not Spam"]]))
+      = f.label(:screenshot, "Email Screenshot")
+      = f.file_field(:screenshot)
       = f.hidden_field(:user_id, value: current_user.id)
       br
       = f.submit("Update", class: "btn btn-primary")

@@ -6,6 +6,7 @@ html
       h1.display-4.center = @article.title
     div
     p.lead = @article.content
+    = image_tag @article.screenshot
 
     - if logged_in?(:editor) && @article.user_id == current_user.id
       = button_to "Edit", { action: "edit", id: @article.id }, method: :get, class: "btn btn-secondary"
