@@ -7,8 +7,8 @@ html
       = f.label(:content, "About this screenshot: ")
       = f.text_area(:content, class: "form-control")
       br
-      = f.label(:category, "Email category: ")
-      = f.select(:category, options_for_select([["Spam", "Spam"], ["Not Spam", "Not Spam"]]))
+      = f.label(:spam, "Is this spam? ")
+      = f.select(:spam, options_for_select([["Spam", "true"], ["Not Spam", "false"]]))
       = f.label(:screenshot, "Email Screenshot")
       = f.file_field(:screenshot)
       = f.hidden_field(:user_id, value: current_user.id)

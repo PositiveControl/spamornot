@@ -9,5 +9,5 @@ User.create(email: "admin@example.com", password: "123456", role: :admin)
 User.create(email: "user@example.com", password: "123456", role: :user)
 User.create(email: "editor@example.com", password: "123456", role: :editor)
 editor_user = User.create(email: "editor2@example.com", password: "123456", role: :editor)
-Article.create(title: "", content: "In the past two trading days, Nikola has seen a 22% rise in share price.", category: "Market", user: editor_user)
+# Article.create(title: "", content: "In the past two trading days, Nikola has seen a 22% rise in share price.", category: "Market", user: editor_user)
 

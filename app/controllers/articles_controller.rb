@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :category, :user_id, :screenshot)
+    params.require(:article).permit(:title, :content, :category, :spam, :user_id, :screenshot)
   end
 
   def belongs_to_editor?(article)
