@@ -2,9 +2,23 @@ doctype html
 html
   body
     div.container.main-content
-      div.progress.index-progress
-        div.progress-bar.progress-bar-striped.bg-success role="progressbar" style="width: #{@correct_percent}%;" aria-valuenow="#{@correct_percent}" aria-valuemin="0" aria-valuemax="100" #{session[:correct].to_i} Correct
-        div.progress-bar.progress-bar-striped.bg-danger role="progressbar" style="width: #{@incorrect_percent}%;" aria-valuenow="#{@incorrect_percent}" aria-valuemin="0" aria-valuemax="100" #{session[:incorrect].to_i} Incorrect
+      - if @total_answered >= 1
+        div.progress.index-progress
+          div.progress-bar.progress-bar-striped.bg-success role="progressbar" style="width: #{@correct_percent}%;" aria-valuenow="#{@correct_percent}" aria-valuemin="0" aria-valuemax="100" #{session[:correct].to_i} Correct
+          div.progress-bar.progress-bar-striped.bg-danger role="progressbar" style="width: #{@incorrect_percent}%;" aria-valuenow="#{@incorrect_percent}" aria-valuemin="0" aria-valuemax="100" #{session[:incorrect].to_i} Incorrect
+      - else
+        div.row.justify-content-center
+          div.card.greeting
+            h3.card-header Welcome to SpamorNot.org
+            div.card-body
+              blockquote.blockquote.mb-0
+                p This is a safe place to test your skills at recognizing the hallmarks of spam emails.
+                  I created this website for my family and friends... I hope that your friends and family will find it
+                  useful as well. This site is very much under construction, so expect to see some new features coming
+                  in the near future. Right now there's no reason to sign up for an account, but in the future some
+                  features will require it (e.g. tracking your progress, personalized experience).
+                p Let's see how good you are at spotting spam... is the below email Spam or Not? :)
+                footer.blockquote-footer.greeting-footer Mark, maintainer of Spamornot.org
       div.row.justify-content-center
       div.row.justify-content-center
         = image_tag(@email.screenshot)
@@ -20,7 +34,7 @@ html
             = button_to("Not", root_path, method: "get",  class: "btn btn-primary", params: {answer: :correct})
       div.row.justify-content-center
         div.collapse id="collapseHint"
-          div.card
+          div.card.hint-card
             h3.card-header
               = @email.title
             div.card-body
